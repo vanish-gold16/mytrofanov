@@ -5,6 +5,8 @@ Minimal personal portfolio built with plain HTML and CSS.
 ## Structure
 
 - `index.html` - main page.
+- `wayoni.html` - Wayoni page.
+- `components/site-header.js` - shared header element.
 - `styles/main.css` - global styles.
 - `public` - static assets.
-- `public/logo.svg` - logo file used in the header.
+- `public/logo.png` - logo file used in the header.
