@@ -12,7 +12,7 @@ class SiteHeader extends HTMLElement {
           <a href="#reach-me-out">reach me out</a>
         </nav>
 
-        <a href="./index.html" aria-label="Ivan Mytrofanov logo">
+        <a class="site-logo" href="./index.html" aria-label="Ivan Mytrofanov logo">
           <img src="./public/logo.png" alt="Ivan Mytrofanov" />
         </a>
       </header>
