@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join the Wayoni waitlist." />
+  <meta name="description" content="Apply to collaborate on Ivan Mytrofanov projects." />
   <link rel="canonical" href="https://mytrofanov.dev/join" />
   <link rel="icon" type="image/svg+xml" href="../public/favicon.png" />
   <link rel="stylesheet" href="../styles/main.css" />
   <script src="../components/site-header.js" defer></script>
-  <title>Join Wayoni | Ivan Mytrofanov</title>
+  <title>Join | Ivan Mytrofanov</title>
 </head>
 <body>
   <site-header></site-header>
@@ -16,13 +16,13 @@
   <main id="join">
     <section class="join-hero" aria-labelledby="join-title">
       <div class="join-copy">
-        <p>wayoni waitlist</p>
+        <p>collaboration</p>
         <h1 id="join-title">join</h1>
       </div>
 
-      <form class="waitlist-form join-form">
+      <form class="application-form join-form">
         <label>
-          name
+          full name
           <input type="text" name="name" autocomplete="name" />
         </label>
 
@@ -32,11 +32,33 @@
         </label>
 
         <label>
+          position
+          <select name="position">
+            <option value="">select position</option>
+            <option value="programmer">programmer</option>
+            <option value="economist">economist</option>
+            <option value="product">product</option>
+            <option value="designer">designer</option>
+            <option value="marketing">marketing</option>
+            <option value="other">other</option>
+          </select>
+        </label>
+
+        <label>
+          preferred project
+          <select name="project">
+            <option value="">-</option>
+            <option value="wayoni">wayoni</option>
+            <option value="other">other</option>
+          </select>
+        </label>
+
+        <label>
           note
           <textarea name="note" rows="4"></textarea>
         </label>
 
-        <button type="button">save spot</button>
+        <button type="button">send application</button>
       </form>
     </section>
   </main>
