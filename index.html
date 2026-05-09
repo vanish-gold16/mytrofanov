@@ -4,11 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Ivan Mytrofanov - personal portfolio." />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+  <link rel="stylesheet" href="./styles/main.css" />
   <title>Ivan Mytrofanov</title>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <header>
+    <nav aria-label="Primary navigation">
+      <a href="#home">home</a>
+      <a href="#wayoni">wayoni</a>
+      <a href="#reach-me-out">reach me out</a>
+    </nav>
+
+    <a href="#home" aria-label="Ivan Mytrofanov logo">
+      <img src="./public/logo.svg" alt="Ivan Mytrofanov" />
+    </a>
+  </header>
+
+  <main id="home">
+    <section aria-labelledby="home-title">
+      <p>Ivan Mytrofanov</p>
+      <h1 id="home-title">portfolio</h1>
+    </section>
+  </main>
 </body>
 </html>
