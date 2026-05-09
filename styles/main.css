@@ -102,6 +102,71 @@ h1 {
   text-transform: uppercase;
 }
 
+.wayoni-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 7vw, 104px);
+}
+
+.wayoni-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.wayoni-copy h1 {
+  max-width: none;
+}
+
+.wayoni-mascot {
+  position: relative;
+  flex: 0 0 clamp(190px, 27vw, 380px);
+  margin: 0;
+  padding: 0 0 clamp(70px, 9vw, 104px);
+}
+
+.wayoni-mascot img {
+  width: 100%;
+  height: auto;
+  max-height: min(58vh, 540px);
+  object-fit: contain;
+}
+
+.wayoni-mascot figcaption {
+  position: absolute;
+  right: 8%;
+  bottom: 18px;
+  color: #8f8f86;
+  font-size: clamp(0.95rem, 1.5vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.wayoni-mascot figcaption::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  width: 2px;
+  height: clamp(40px, 6vw, 72px);
+  background: #f2f2ea;
+  transform: translateX(-50%);
+}
+
+.wayoni-mascot figcaption::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + clamp(48px, 6vw, 80px));
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #f2f2ea;
+  border-left: 2px solid #f2f2ea;
+  transform: translateX(-50%) rotate(45deg);
+}
+
 @media (max-width: 860px) {
   header {
     align-items: flex-start;
@@ -110,6 +175,14 @@ h1 {
 
   nav {
     max-width: 220px;
+  }
+
+  .wayoni-hero {
+    align-items: flex-start;
+  }
+
+  .wayoni-mascot {
+    flex-basis: clamp(160px, 33vw, 260px);
   }
 }
 
@@ -121,5 +194,17 @@ h1 {
 
   h1 {
     font-size: clamp(4rem, 21vw, 7rem);
+  }
+
+  .wayoni-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wayoni-mascot {
+    align-self: flex-end;
+    width: min(72vw, 260px);
+    flex-basis: auto;
+    padding-bottom: 76px;
   }
 }
