@@ -1,6 +1,6 @@
 # Ivan Mytrofanov Portfolio
 
-Minimal personal portfolio built with plain HTML and CSS.
+Personal portfolio built with plain HTML and CSS.
 
 ## Structure
 

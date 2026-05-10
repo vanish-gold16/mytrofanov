@@ -466,6 +466,14 @@ h1 {
   text-transform: lowercase;
 }
 
+.waitlist-form button:hover,
+.waitlist-form button:focus-visible {
+  background: #ff9a2f;
+  box-shadow:
+    0 0 24px rgba(255, 154, 47, 0.9),
+    0 0 58px rgba(255, 122, 26, 0.48);
+}
+
 @media (max-width: 860px) {
   header {
     align-items: flex-start;
