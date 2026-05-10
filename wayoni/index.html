@@ -73,6 +73,7 @@
                   maxlength="16"
                   aria-errormessage="name-errors"
           />
+          <span class="field_errors" id="name-errors" data-js-form-field-errors></span>
         </label>
 
         <label>
@@ -82,12 +83,22 @@
                   name="email"
                   autocomplete="email"
                   required
+                  pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"
+                  title="does not match the regex"
+                  aria-errormessage="email-errors"
           />
+          <span class="field_errors" id="email-errors" data-js-form-field-errors></span>
         </label>
 
         <label>
           note
           <textarea name="message" rows="4"></textarea>
+        </label>
+
+        <label class="checkbox" for="agreement">
+          <input type="checkbox" name="contact_consent" value="yes" required aria-errormessage="agreement-errors"/>
+          <span>I agree to be contacted when Wayoni launches.</span>
+          <span class="field_errors" id="agreement-errors" data-js-form-field-errors></span>
         </label>
 
         <button type="submit">save spot</button>

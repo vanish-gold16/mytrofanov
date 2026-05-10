@@ -408,6 +408,25 @@ h1 {
   resize: vertical;
 }
 
+.application-form .consent-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #f2f2ea;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.application-form .consent-field input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin: 0;
+  padding: 0;
+  accent-color: #ff7a1a;
+}
+
 .application-form input:focus,
 .application-form select:focus,
 .application-form textarea:focus {
