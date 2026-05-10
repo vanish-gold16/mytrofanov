@@ -8,6 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="../public/favicon.png" />
   <link rel="stylesheet" href="../styles/main.css" />
   <script src="../components/site-header.js" defer></script>
+  <script src="../components/form.js" defer></script>
   <title>Wayoni | Ivan Mytrofanov</title>
 </head>
 <body>
@@ -57,18 +58,31 @@
       <a class="waitlist-close" href="#" aria-label="Close waitlist form">x</a>
       <h2 id="waitlist-title">join waitlist</h2>
 
-      <form class="application-form waitlist-form" action="https://formspree.io/f/xykobnyp" method="POST">
+      <form class="application-form waitlist-form" action="https://formspree.io/f/xykobnyp" method="POST" novalidate data-js-form>
         <input type="hidden" name="subject" value="New Wayoni waitlist signup from {{ email }}" />
         <input type="hidden" name="source" value="wayoni waitlist" />
 
         <label>
           name
-          <input type="text" name="name" autocomplete="name" />
+          <input
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  minlength="2"
+                  maxlength="16"
+                  aria-errormessage="name-errors"
+          />
         </label>
 
         <label>
           email
-          <input type="email" name="email" autocomplete="email" required />
+          <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+          />
         </label>
 
         <label>
