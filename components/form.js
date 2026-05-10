@@ -6,8 +6,9 @@ class FormValidation {
 
     errorMessages = {
         valueMissing: () => 'this field is required',
+        typeMismatch: () => 'enter a valid email',
         patternMismatch: ({title}) => title || 'pattern mismatch',
-        tooShort: ({minLength}) => `minimum ${minLength} symbols`
+        tooShort: ({minLength}) => `minimum ${minLength} symbols`,
         tooLong: ({maxLength}) => `maximum ${maxLength} symbols`
     }
 
@@ -52,6 +53,10 @@ class FormValidation {
             fieldControlElement.getAttribute('aria-errormessage')
         )
 
+        if (!fieldErrorsElement) {
+            return
+        }
+
         fieldErrorsElement.innerHTML = errorMessages
             .map((message) => `<span class='field-errors'>${message}</span>`)
             .join('')
@@ -82,13 +87,14 @@ class FormValidation {
         let isFormValid = true
         let firstInvalidFieldControl = null
 
-        const isFormElement = event.target.matches(this.selectors.form)
+        const formElement = event.target
+        const isFormElement = formElement.matches(this.selectors.form)
 
-        if (!formElement) {
+        if (!isFormElement) {
             return
         }
 
-        const requiredControlElements = [...event.target.elements]
+        const requiredControlElements = [...formElement.elements]
             .filter(({required}) => required)
 
         requiredControlElements.forEach((element) => {

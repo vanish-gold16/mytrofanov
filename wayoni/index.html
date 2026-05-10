@@ -84,7 +84,7 @@
                   autocomplete="email"
                   required
                   pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"
-                  title="does not match the regex"
+                  title="enter a valid email address"
                   aria-errormessage="email-errors"
           />
           <span class="field_errors" id="email-errors" data-js-form-field-errors></span>
@@ -95,11 +95,13 @@
           <textarea name="message" rows="4"></textarea>
         </label>
 
-        <label class="checkbox" for="agreement">
-          <input type="checkbox" name="contact_consent" value="yes" required aria-errormessage="agreement-errors"/>
-          <span>I agree to be contacted when Wayoni launches.</span>
+        <div class="consent-group">
+          <label class="consent-field" for="agreement">
+            <input id="agreement" type="checkbox" name="contact_consent" value="yes" required aria-errormessage="agreement-errors" />
+            <span>I agree to be contacted when Wayoni launches.</span>
+          </label>
           <span class="field_errors" id="agreement-errors" data-js-form-field-errors></span>
-        </label>
+        </div>
 
         <button type="submit">save spot</button>
       </form>

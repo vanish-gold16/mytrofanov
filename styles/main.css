@@ -408,6 +408,11 @@ h1 {
   resize: vertical;
 }
 
+.application-form .consent-group {
+  display: grid;
+  gap: 8px;
+}
+
 .application-form .consent-field {
   display: flex;
   align-items: flex-start;
@@ -425,6 +430,19 @@ h1 {
   margin: 0;
   padding: 0;
   accent-color: #ff7a1a;
+}
+
+.field_errors {
+  min-height: 1em;
+  color: #ffb14a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.field-errors {
+  display: block;
 }
 
 .application-form input:focus,
