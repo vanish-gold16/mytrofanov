@@ -57,7 +57,10 @@
       <a class="waitlist-close" href="#" aria-label="Close waitlist form">x</a>
       <h2 id="waitlist-title">join waitlist</h2>
 
-      <form class="application-form waitlist-form">
+      <form class="application-form waitlist-form" action="https://formspree.io/f/xykobnyp" method="POST">
+        <input type="hidden" name="subject" value="New Wayoni waitlist signup from {{ email }}" />
+        <input type="hidden" name="source" value="wayoni waitlist" />
+
         <label>
           name
           <input type="text" name="name" autocomplete="name" />
@@ -65,15 +68,15 @@
 
         <label>
           email
-          <input type="email" name="email" autocomplete="email" />
+          <input type="email" name="email" autocomplete="email" required />
         </label>
 
         <label>
           note
-          <textarea name="note" rows="4"></textarea>
+          <textarea name="message" rows="4"></textarea>
         </label>
 
-        <button type="button">save spot</button>
+        <button type="submit">save spot</button>
       </form>
     </div>
   </div>
