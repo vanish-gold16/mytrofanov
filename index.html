@@ -7,6 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="./public/favicon.png" />
   <link rel="stylesheet" href="./styles/main.css" />
   <script src="./components/site-header.js" defer></script>
+  <script src="./components/site-footer.js" defer></script>
   <title>Ivan Mytrofanov</title>
 </head>
 <body>
@@ -16,6 +17,24 @@
     <section class="home-hero" aria-labelledby="home-title">
       <p>Ivan Mytrofanov</p>
       <h1 id="home-title">Full-stack</h1>
+
+      <p class="home-intro">I build web &amp; mobile products end-to-end — from Spring Boot APIs to React and SwiftUI front-ends.</p>
+
+      <div class="home-stack" aria-label="My stack">
+        <span class="home-stack__label">my stack</span>
+        <div class="home-stack__icons">
+          <img src="./public/stack/java.png" alt="Java" />
+          <img src="./public/stack/spring.png" alt="Spring" />
+          <img src="./public/stack/postgres.png" alt="Postgres" />
+          <img src="./public/stack/react.png" alt="React" />
+          <img src="./public/stack/apple.png" alt="Apple" />
+        </div>
+      </div>
+
+      <div class="home-cta">
+        <a class="home-cta__primary" href="./projects/index.html">view projects</a>
+        <a class="home-cta__secondary" href="#reach-me-out">reach me out</a>
+      </div>
     </section>
 
     <section class="timeline-section" aria-labelledby="timeline-title">
@@ -80,5 +99,7 @@
       </div>
     </section>
   </main>
+
+  <site-footer></site-footer>
 </body>
 </html>
