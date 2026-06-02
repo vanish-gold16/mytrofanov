@@ -20,6 +20,7 @@ class SiteHeader extends HTMLElement {
       <header>
         <nav aria-label="Primary navigation">
           <a href="${homeUrl}">home</a>
+          <a href="${homeUrl}#experience">experience</a>
           <a href="${wayoniUrl}">wayoni</a>
           <a href="${joinUrl}">join</a>
           <a href="#reach-me-out">reach me out</a>

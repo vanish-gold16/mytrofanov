@@ -210,6 +210,73 @@ h1 {
   text-transform: none;
 }
 
+.experience-section {
+  padding-bottom: clamp(80px, 12vw, 160px);
+}
+
+.experience-title {
+  margin-bottom: clamp(48px, 7vw, 92px);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.experience-card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: clamp(22px, 2.6vw, 34px);
+  border: 2px solid #2a2925;
+  border-radius: 12px;
+  background: #10100e;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.experience-card:hover {
+  border-color: rgba(255, 177, 74, 0.72);
+  box-shadow:
+    0 0 24px rgba(255, 122, 26, 0.32),
+    0 18px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+.experience-period {
+  color: #ff9a2f;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.experience-role {
+  margin: 0;
+  color: #f2f2ea;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.experience-company {
+  color: #8f8f86;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: lowercase;
+}
+
+.experience-text {
+  max-width: none;
+  margin: 8px 0 0;
+  color: #b8b8ad;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: none;
+}
+
 .wayoni-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(220px, 28vw, 390px);
