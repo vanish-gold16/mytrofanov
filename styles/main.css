@@ -115,7 +115,8 @@ h1 {
   white-space: nowrap;
 }
 
-#home {
+#home,
+#projects {
   align-items: start;
 }
 
@@ -275,6 +276,126 @@ h1 {
   font-weight: 800;
   line-height: 1.35;
   text-transform: none;
+}
+
+.projects-section {
+  padding-bottom: clamp(80px, 12vw, 160px);
+}
+
+.projects-title {
+  margin-bottom: clamp(48px, 7vw, 92px);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.project-card {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 20px);
+  align-content: start;
+  padding: clamp(24px, 2.8vw, 36px);
+  border: 2px solid #2a2925;
+  border-radius: 12px;
+  background: #10100e;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(255, 177, 74, 0.72);
+  box-shadow:
+    0 0 24px rgba(255, 122, 26, 0.32),
+    0 18px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(8px, 1vw, 14px);
+  min-height: clamp(30px, 2.8vw, 42px);
+}
+
+.project-stack img {
+  width: clamp(28px, 2.6vw, 40px);
+  height: clamp(28px, 2.6vw, 40px);
+  object-fit: contain;
+}
+
+.project-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.project-name {
+  margin: 0;
+  color: #f2f2ea;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.project-status {
+  width: clamp(10px, 1.1vw, 14px);
+  height: clamp(10px, 1.1vw, 14px);
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #8f8f86;
+}
+
+.project-status--live {
+  background: #48ff7b;
+  box-shadow:
+    0 0 12px rgba(72, 255, 123, 0.88),
+    0 0 28px rgba(72, 255, 123, 0.36);
+}
+
+.project-desc {
+  max-width: none;
+  margin: 0;
+  color: #b8b8ad;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.project-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: clamp(4px, 0.6vw, 8px);
+}
+
+.project-tag {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 177, 74, 0.4);
+  border-radius: 999px;
+  color: #ff9a2f;
+  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.project-link {
+  color: #ff9a2f;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: lowercase;
+  transition: color 160ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  color: #ffb14a;
 }
 
 .wayoni-hero {

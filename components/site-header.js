@@ -7,6 +7,9 @@ const homeUrl = isLocalFile ? new URL("index.html", siteRootUrl).href : siteRoot
 const wayoniUrl = isLocalFile
   ? new URL("wayoni/index.html", siteRootUrl).href
   : new URL("wayoni/", siteRootUrl).href;
+const projectsUrl = isLocalFile
+  ? new URL("projects/index.html", siteRootUrl).href
+  : new URL("projects/", siteRootUrl).href;
 const joinUrl = isLocalFile ? new URL("join/index.html", siteRootUrl).href : new URL("join/", siteRootUrl).href;
 const logoUrl = new URL("public/logo.png", siteRootUrl).href;
 
@@ -21,6 +24,7 @@ class SiteHeader extends HTMLElement {
         <nav aria-label="Primary navigation">
           <a href="${homeUrl}">home</a>
           <a href="${homeUrl}#experience">experience</a>
+          <a href="${projectsUrl}">projects</a>
           <a href="${wayoniUrl}">wayoni</a>
           <a href="${joinUrl}">join</a>
           <a href="#reach-me-out">reach me out</a>
