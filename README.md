@@ -6,7 +6,7 @@ Personal portfolio built with plain HTML and CSS.
 
 - `index.html` - main page (hero, timeline, experience).
 - `projects/index.html` - projects page, served at `/projects`.
-- `wayoni/index.html` - Wayoni page, served at `/wayoni`.
+- `wayoni/index.html` - Wayoni case page (live at https://wayoni.com), served at `/wayoni`.
 - `join/index.html` - collaboration application page, served at `/join`.
 - `components/site-header.js` - shared header element.
 - `components/site-footer.js` - shared footer element with contact links.

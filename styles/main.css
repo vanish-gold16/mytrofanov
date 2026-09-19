@@ -116,7 +116,8 @@ h1 {
 }
 
 #home,
-#projects {
+#projects,
+#wayoni {
   align-items: start;
 }
 
@@ -371,6 +372,18 @@ site-footer {
   font-weight: 800;
   line-height: 1.3;
   text-transform: none;
+}
+
+.timeline-link {
+  color: #ff9a2f;
+  border-bottom: 1px solid rgba(255, 177, 74, 0.4);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.timeline-link:hover,
+.timeline-link:focus-visible {
+  color: #ffb14a;
+  border-color: #ffb14a;
 }
 
 .experience-section {
@@ -672,7 +685,7 @@ site-footer {
   margin-top: clamp(14px, 1.8vw, 22px);
 }
 
-.waitlist-button {
+.wayoni-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -701,8 +714,8 @@ site-footer {
   width: 100%;
 }
 
-.waitlist-button:hover,
-.waitlist-button:focus-visible {
+.wayoni-open:hover,
+.wayoni-open:focus-visible {
   background: #ff9a2f;
   box-shadow:
     0 0 24px rgba(255, 154, 47, 0.9),
@@ -723,73 +736,159 @@ site-footer {
   object-fit: contain;
 }
 
-.wayoni-mascot figcaption {
-  position: absolute;
-  left: 50%;
-  top: clamp(16px, 2vw, 24px);
-  color: #8f8f86;
-  font-size: clamp(0.95rem, 1.5vw, 1.35rem);
-  font-weight: 800;
+.live-badge {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(16px, 2vw, 24px);
+  padding: 8px 14px;
+  border: 1px solid rgba(72, 255, 123, 0.4);
+  border-radius: 999px;
+  color: #48ff7b;
+  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+  font-weight: 900;
   line-height: 1;
   text-transform: lowercase;
-  white-space: nowrap;
-  transform: translateX(-50%);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
-.waitlist-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
+a.live-badge:hover,
+a.live-badge:focus-visible {
+  border-color: rgba(72, 255, 123, 0.8);
+  box-shadow: 0 0 18px rgba(72, 255, 123, 0.28);
+}
+
+.live-badge__dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #48ff7b;
+  box-shadow: 0 0 10px rgba(72, 255, 123, 0.88);
+  animation: live-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-badge__dot {
+    animation: none;
+  }
+}
+
+.wayoni-features,
+.wayoni-cta {
+  padding-top: 0;
+}
+
+.wayoni-features__title {
+  margin-bottom: clamp(48px, 7vw, 92px);
+}
+
+.feature-grid {
   display: grid;
-  place-items: center;
-  padding: 24px;
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity 160ms ease, visibility 160ms ease;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
 }
 
-.waitlist-modal:target {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.waitlist-modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.82);
-}
-
-.waitlist-dialog {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 460px);
-  padding: clamp(26px, 4vw, 40px);
-  border: 2px solid rgba(255, 177, 74, 0.72);
-  border-radius: 8px;
+.feature-card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  justify-items: start;
+  padding: clamp(22px, 2.6vw, 34px);
+  border: 2px solid #2a2925;
+  border-radius: 12px;
   background: #10100e;
-  box-shadow:
-    0 0 36px rgba(255, 122, 26, 0.38),
-    0 24px 80px rgba(0, 0, 0, 0.6);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.waitlist-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  color: #f2f2ea;
-  font-size: 1.4rem;
+.feature-card:hover {
+  border-color: rgba(255, 177, 74, 0.72);
+  box-shadow:
+    0 0 24px rgba(255, 122, 26, 0.32),
+    0 18px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+.feature-card--soon {
+  border-style: dashed;
+}
+
+.feature-index {
+  color: #ff9a2f;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
   font-weight: 900;
   line-height: 1;
 }
 
-.waitlist-dialog h2 {
-  margin: 0 0 24px;
+.feature-name {
+  margin: 0;
   color: #f2f2ea;
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.feature-text {
+  margin: 0;
+  color: #b8b8ad;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.wayoni-cta .wayoni-cta__title {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 900;
   line-height: 0.9;
   text-transform: uppercase;
+}
+
+.project-card--featured {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) clamp(140px, 18vw, 240px);
+  column-gap: clamp(24px, 4vw, 64px);
+  border-color: rgba(255, 177, 74, 0.45);
+}
+
+.project-card--featured > :not(.project-card__art) {
+  grid-column: 1;
+}
+
+.project-card__art {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: center;
+  margin: 0;
+}
+
+.project-card__art img {
+  width: 100%;
+  height: auto;
+}
+
+.project-card--featured .project-name {
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+}
+
+.project-tag--live {
+  border-color: rgba(72, 255, 123, 0.4);
+  color: #48ff7b;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2vw, 24px);
 }
 
 .join-hero {
@@ -911,14 +1010,6 @@ site-footer {
   text-transform: lowercase;
 }
 
-.waitlist-form button:hover,
-.waitlist-form button:focus-visible {
-  background: #ff9a2f;
-  box-shadow:
-    0 0 24px rgba(255, 154, 47, 0.9),
-    0 0 58px rgba(255, 122, 26, 0.48);
-}
-
 @media (max-width: 860px) {
   header {
     align-items: flex-start;
@@ -944,7 +1035,7 @@ site-footer {
     justify-self: start;
   }
 
-  .waitlist-button {
+  .wayoni-open {
     min-height: 50px;
     padding: 0 22px;
   }
@@ -973,6 +1064,15 @@ site-footer {
     gap: 10px;
   }
 
+  .wayoni-open {
+    min-width: 0;
+    padding: 0 16px;
+  }
+
+  .wayoni-description-block {
+    width: 100%;
+  }
+
   .wayoni-slogan {
     font-size: clamp(0.62rem, 2.4vw, 0.86rem);
   }
@@ -989,5 +1089,13 @@ site-footer {
 
   .wayoni-side {
     justify-items: center;
+  }
+
+  .project-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__art {
+    display: none;
   }
 }

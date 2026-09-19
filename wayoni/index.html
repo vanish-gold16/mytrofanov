@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Wayoni - Ivan Mytrofanov project." />
+  <meta name="description" content="Wayoni - travel discovery platform by Ivan Mytrofanov. Live at wayoni.com." />
   <link rel="canonical" href="https://mytrofanov.dev/wayoni" />
   <link rel="icon" type="image/svg+xml" href="../public/favicon.png" />
   <link rel="stylesheet" href="../styles/main.css" />
   <script src="../components/site-header.js" defer></script>
   <script src="../components/site-footer.js" defer></script>
-  <script src="../components/form.js" defer></script>
   <title>Wayoni | Ivan Mytrofanov</title>
 </head>
 <body>
@@ -33,13 +32,14 @@
             </div>
             <div class="wayoni-actions">
               <span class="wayoni-slogan">search less. discover more.</span>
-              <a class="waitlist-button" href="#waitlist-modal">join waitlist</a>
+              <a class="wayoni-open" href="https://wayoni.com" target="_blank" rel="noopener noreferrer">open wayoni.com <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
           <div class="wayoni-description-block">
-            <p class="wayoni-description">personalized travel discovery platform that helps you find where to go next, not just how to get there.</p>
-            <p class="wayoni-description">It searches across a huge library of interest, different transport options, matches destinations to your budget, dates and learns from your past trips to recommend places that actually fit you.</p>
+            <span class="live-badge"><span class="live-badge__dot" aria-hidden="true"></span>live in production</span>
+            <p class="wayoni-description">Personalized travel discovery platform that helps you find where to go next, not just how to get there.</p>
+            <p class="wayoni-description">Pick a vibe, a budget and the days you've got — wayoni searches across interests, transport options and dates to suggest trips that actually fit you.</p>
           </div>
         </div>
       </div>
@@ -50,65 +50,61 @@
         </figure>
       </div>
     </section>
+
+    <section class="wayoni-features" aria-labelledby="wayoni-features-title">
+      <p>what it does</p>
+      <h1 id="wayoni-features-title" class="wayoni-features__title">Features</h1>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h2 class="feature-name">Search by vibe</h2>
+          <p class="feature-text">Filter destinations by what you like — food, architecture, nightlife, history, beaches, skiing and more.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h2 class="feature-name">Fits your budget &amp; dates</h2>
+          <p class="feature-text">Set budget, departure dates, trip length, climate and region — get trips that match, with real prices.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h2 class="feature-name">Random adventure</h2>
+          <p class="feature-text">Can't decide? One click generates a random trip picked just for you.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">04</span>
+          <h2 class="feature-name">Popular from your city</h2>
+          <p class="feature-text">Fresh cheap routes from where you are right now, updated as they're found.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">05</span>
+          <h2 class="feature-name">Explore the world</h2>
+          <p class="feature-text">Track the countries you've visited and see how much of the world you've explored.</p>
+        </article>
+
+        <article class="feature-card feature-card--soon">
+          <span class="feature-index">06</span>
+          <h2 class="feature-name">Rewards &amp; hero</h2>
+          <p class="feature-text">Collect rewards for your trips and customize your own hero.</p>
+          <span class="project-tag">coming soon</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="wayoni-cta" aria-labelledby="wayoni-cta-title">
+      <p>try it yourself</p>
+      <h2 id="wayoni-cta-title" class="wayoni-cta__title">Where to next?</h2>
+      <div class="home-cta">
+        <a class="home-cta__primary" href="https://wayoni.com" target="_blank" rel="noopener noreferrer">open wayoni.com <span aria-hidden="true">↗</span></a>
+        <a class="home-cta__secondary" href="../join/index.html">join the team</a>
+      </div>
+    </section>
   </main>
 
   <site-footer></site-footer>
-
-  <div class="waitlist-modal" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="waitlist-title">
-    <a class="waitlist-modal__backdrop" href="#" aria-label="Close waitlist form"></a>
-
-    <div class="waitlist-dialog">
-      <a class="waitlist-close" href="#" aria-label="Close waitlist form">x</a>
-      <h2 id="waitlist-title">join waitlist</h2>
-
-      <form class="application-form waitlist-form" action="https://formspree.io/f/xykobnyp" method="POST" novalidate data-js-form>
-        <input type="hidden" name="subject" value="New Wayoni waitlist signup from {{ email }}" />
-        <input type="hidden" name="source" value="wayoni waitlist" />
-
-        <label>
-          name
-          <input
-                  type="text"
-                  name="name"
-                  autocomplete="name"
-                  required
-                  minlength="2"
-                  maxlength="16"
-                  aria-errormessage="name-errors"
-          />
-          <span class="field_errors" id="name-errors" data-js-form-field-errors></span>
-        </label>
-
-        <label>
-          email
-          <input
-                  type="email"
-                  name="email"
-                  autocomplete="email"
-                  required
-                  pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"
-                  title="enter a valid email address"
-                  aria-errormessage="email-errors"
-          />
-          <span class="field_errors" id="email-errors" data-js-form-field-errors></span>
-        </label>
-
-        <label>
-          note
-          <textarea name="message" rows="4"></textarea>
-        </label>
-
-        <div class="consent-group">
-          <label class="consent-field" for="agreement">
-            <input id="agreement" type="checkbox" name="contact_consent" value="yes" required aria-errormessage="agreement-errors" />
-            <span>I agree to be contacted when Wayoni launches.</span>
-          </label>
-          <span class="field_errors" id="agreement-errors" data-js-form-field-errors></span>
-        </div>
-
-        <button type="submit">save spot</button>
-      </form>
-    </div>
-  </div>
 </body>
 </html>
